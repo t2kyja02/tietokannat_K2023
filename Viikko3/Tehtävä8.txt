@@ -1,0 +1,13 @@
+a)	SELECT name FROM language ORDER BY name;
+b)	SELECT DISTINCT(title) FROM film 
+	JOIN film_actor ON film.film_id=film_actor.film_id 
+	JOIN actor ON actor.actor_id=film_actor.actor_id 
+	WHERE last_name = 'Temple';
+c)	SELECT actors FROM film_list WHERE title='Ghost Groundhog';
+d)	SELECT COUNT(*) FROM category
+	JOIN film_category ON category.category_id=film_category.category_id
+	WHERE category.name='Horror';
+e)	SELECT title FROM category
+	JOIN film_category ON category.category_id=film_category.category_id
+	JOIN film_list ON film_list.film_id=film_category.film_id
+	WHERE category.name='Horror';

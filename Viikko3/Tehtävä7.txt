@@ -1,0 +1,29 @@
+a)	SELECT * FROM employees ORDER BY last_name LIMIT 10;
+b)	SELECT * FROM employees ORDER BY last_name, first_name LIMIT 10;
+c)	SELECT * FROM employees ORDER BY hire_date DESC LIMIT 5;
+d) 	SELECT first_name, last_name, salary FROM employees JOIN salaries ON employees.emp_no = salaries.emp_no ORDER BY salary DESC LIMIT 1;
+e)	SELECT first_name, last_name, salary FROM employees JOIN salaries ON employees.emp_no = salaries.emp_no ORDER BY salary LIMIT 1;
+f)	SELECT first_name, last_name, salary FROM employees JOIN salaries ON employees.emp_no = salaries.emp_no WHERE salary >= 150000;
+g)	Sales:
+		SELECT COUNT(*) FROM employees
+		JOIN dept_emp ON employees.emp_no=dept_emp.emp_no
+		JOIN departments ON dept_emp.dept_no=departments.dept_no
+		WHERE dept_name='Sales';
+	Marketing:
+		SELECT COUNT(*) FROM employees
+		JOIN dept_emp ON employees.emp_no=dept_emp.emp_no
+		JOIN departments ON dept_emp.dept_no=departments.dept_no
+		WHERE dept_name='Marketing';
+h)	SELECT first_name, last_name, dept_name FROM employees 
+	JOIN dept_manager ON employees.emp_no = dept_manager.emp_no 
+	JOIN departments ON dept_manager.dept_no = departments.dept_no;
+i)	Sales:
+		SELECT dept_name,AVG(salary) FROM salaries
+		JOIN dept_emp ON salaries.emp_no=dept_emp.emp_no
+		JOIN departments ON dept_emp.dept_no=departments.dept_no
+		WHERE dept_name='Sales';
+	Marketing:
+		SELECT dept_name,AVG(salary) FROM salaries
+		JOIN dept_emp ON salaries.emp_no=dept_emp.emp_no
+		JOIN departments ON dept_emp.dept_no=departments.dept_no
+		WHERE dept_name='Marketing';
